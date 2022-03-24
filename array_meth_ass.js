@@ -9,24 +9,24 @@ const users = [
     {id: 3879, firstName: 'Ira', lastName: 'Bolislovitz', logins: 9, isPremiumMember: false}
 ];
 
-//Find a user named "Jose"
+// //Find a user named "Jose"
 const usersearch = users.filter(user => user.firstName === "Jose"); 
 console.log(usersearch);
 
-//Get an array of all the premium members
+// //Get an array of all the premium members
 const premium = users.filter(user => user.isPremiumMember === true);
 console.log(premium);
 
-// Get an array of all the user last names
+// // Get an array of all the user last names
 const lastn = users.map(user => user.lastName);
 console.log(lastn);
 
 // Get an array of the full names who have logged in more than 10 times
 const login = users.filter(user => user.logins > 10);
-console.log(login);
+console.log(login.map((user) => user.firstName + ' ' + user.lastName));
 
 
-// Get the total number of logins for the list of users
+// // Get the total number of logins for the list of users
 let initialValue = 0
 const total = users.reduce(function(total, logs) {
     return total + logs.logins
